@@ -1,0 +1,263 @@
+# 食材九宫格生图 Prompt 与待补全清单
+
+## 一、通用生图 Prompt（复制后替换下方每组 9 个食材即可）
+
+### 中文 Prompt（推荐）
+俯拍商业棚拍美食摄影，3x3 九宫格均匀排版，纯白 #FFFFFF 无缝背景，带有柔和自然的底部投影。
+严格要求：
+1. 图片中禁止出现任何文字、标签、数字、水印或边框线；
+2. 风格必须简单、真实、生活化，像厨房备菜随手拍的生鲜食材，不要摆得过于整齐对称，不要拼成几何图案或太极图；
+3. 分量克制自然：例如切片类（火腿/培根/腊肉/午餐肉等）只放 2~3 片，整颗类只放 1~2 个，颗粒/调料类一小撮或一小碟即可；
+4. 9 种食材彼此独立不重叠，按从左到右、从上到下依次为：
+第一行：1）[食材1]、2）[食材2]、3）[食材3]
+第二行：4）[食材4]、5）[食材5]、6）[食材6]
+第三行：7）[食材7]、8）[食材8]、9）[食材9]
+
+### English Prompt（若使用英文生图模型）
+Overhead commercial studio food photography in a clean 3x3 grid on a pure #FFFFFF white background with soft natural shadows.
+CRITICAL RULES:
+1. NO text, NO labels, NO numbers, NO watermarks, NO grid lines anywhere.
+2. Keep each ingredient SIMPLE, NATURAL, and CASUAL like real kitchen prep — do NOT stack too neatly or arrange symmetrically/geometrically.
+3. Use small realistic portions (e.g., 2-3 slices, 1-2 pieces, or a small natural pinch/bowl).
+4. 9 separate non-overlapping items from left-to-right, top-to-bottom:
+Row 1: 1) [Item 1], 2) [Item 2], 3) [Item 3]
+Row 2: 4) [Item 4], 5) [Item 5], 6) [Item 6]
+Row 3: 7) [Item 7], 8) [Item 8], 9) [Item 9]
+
+==================================================
+二、待生图食材分组清单（共 190 种，分 22 组九宫格）
+==================================================
+
+### 第 01 组（9 种）：整鸡、鹅肉、鸭蛋、日本豆腐、冻豆腐、豆腐泡、千张、面筋、魔芋结
+  1. 整鸡 (ing_whole_chicken)
+  2. 鹅肉 (ing_goose)
+  3. 鸭蛋 (ing_duck_egg)
+  4. 日本豆腐 (ing_egg_tofu)
+  5. 冻豆腐 (ing_frozen_tofu)
+  6. 豆腐泡 (ing_tofu_puff)
+  7. 千张 (ing_tofu_skin)
+  8. 面筋 (ing_wheat_gluten)
+  9. 魔芋结 (ing_konjac)
+
+### 第 02 组（9 种）：燕麦、面粉、手工面片、意大利面、乌冬面、米粉、河粉、凉皮、年糕
+  1. 燕麦 (ing_oats)
+  2. 面粉 (ing_flour)
+  3. 手工面片 (ing_dough_drops)
+  4. 意大利面 (ing_pasta)
+  5. 乌冬面 (ing_udon)
+  6. 米粉 (ing_rice_noodles)
+  7. 河粉 (ing_ho_fun)
+  8. 凉皮 (ing_liangpi)
+  9. 年糕 (ing_rice_cake)
+
+### 第 03 组（9 种）：饺子皮、馄饨皮、吐司面包、馒头、玉米粒、红豆、绿豆、黑豆、黄豆
+  1. 饺子皮 (ing_dumpling_wrapper)
+  2. 馄饨皮 (ing_wonton_wrapper)
+  3. 吐司面包 (ing_toast_bread)
+  4. 馒头 (ing_steamed_bun)
+  5. 玉米粒 (ing_corn_kernels)
+  6. 红豆 (ing_red_bean)
+  7. 绿豆 (ing_mung_bean)
+  8. 黑豆 (ing_black_bean)
+  9. 黄豆 (ing_soybean)
+
+### 第 04 组（9 种）：生姜、小葱、大葱、干辣椒、泡椒、红椒、彩椒、线椒、迷迭香
+  1. 生姜 (ing_ginger)
+  2. 小葱 (ing_scallion)
+  3. 大葱 (ing_leek)
+  4. 干辣椒 (ing_dried_chili)
+  5. 泡椒 (ing_pickled_chili)
+  6. 红椒 (ing_red_pepper)
+  7. 彩椒 (ing_bell_pepper)
+  8. 线椒 (ing_long_chili)
+  9. 迷迭香 (ing_rosemary)
+
+### 第 05 组（9 种）：百里香、罗勒叶、薄荷叶、欧芹、紫苏、圣女果、西葫芦、秋葵、四季豆
+  1. 百里香 (ing_thyme)
+  2. 罗勒叶 (ing_basil)
+  3. 薄荷叶 (ing_mint)
+  4. 欧芹 (ing_parsley)
+  5. 紫苏 (ing_perilla)
+  6. 圣女果 (ing_cherry_tomato)
+  7. 西葫芦 (ing_zucchini)
+  8. 秋葵 (ing_okra)
+  9. 四季豆 (ing_green_beans)
+
+### 第 06 组（9 种）：豇豆、毛豆、豌豆、荷兰豆、红薯、芦笋、荸荠、莴笋、芋圆
+  1. 豇豆 (ing_long_beans)
+  2. 毛豆 (ing_edamame)
+  3. 豌豆 (ing_green_peas)
+  4. 荷兰豆 (ing_snow_peas)
+  5. 红薯 (ing_sweet_potato)
+  6. 芦笋 (ing_asparagus)
+  7. 荸荠 (ing_water_chestnut)
+  8. 莴笋 (ing_celtuce)
+  9. 芋圆 (ing_taro_balls)
+
+### 第 07 组（9 种）：娃娃菜、油麦菜、空心菜、苋菜、包菜、紫甘蓝、花菜、蒜薹、芥蓝
+  1. 娃娃菜 (ing_baby_cabbage)
+  2. 油麦菜 (ing_romaine)
+  3. 空心菜 (ing_water_spinach)
+  4. 苋菜 (ing_amaranth)
+  5. 包菜 (ing_cabbage)
+  6. 紫甘蓝 (ing_purple_cabbage)
+  7. 花菜 (ing_cauliflower)
+  8. 蒜薹 (ing_garlic_scape)
+  9. 芥蓝 (ing_chinese_broccoli)
+
+### 第 08 组（9 种）：菜心、茼蒿、西洋菜、杏鲍菇、口蘑、茶树菇、蟹味菇、猴头菇、银耳
+  1. 菜心 (ing_choy_sum)
+  2. 茼蒿 (ing_garland_chrysanthemum)
+  3. 西洋菜 (ing_watercress)
+  4. 杏鲍菇 (ing_king_oyster_mushroom)
+  5. 口蘑 (ing_button_mushroom)
+  6. 茶树菇 (ing_tea_tree_mushroom)
+  7. 蟹味菇 (ing_shimeji)
+  8. 猴头菇 (ing_lions_mane)
+  9. 银耳 (ing_snow_fungus)
+
+### 第 09 组（9 种）：竹荪、柠檬、青柠、菠萝、芒果、苹果、牛油果、香蕉、草莓
+  1. 竹荪 (ing_bamboo_fungus)
+  2. 柠檬 (ing_lemon)
+  3. 青柠 (ing_lime)
+  4. 菠萝 (ing_pineapple)
+  5. 芒果 (ing_mango)
+  6. 苹果 (ing_apple)
+  7. 牛油果 (ing_avocado)
+  8. 香蕉 (ing_banana)
+  9. 草莓 (ing_strawberry)
+
+### 第 10 组（9 种）：蓝莓、枸杞、核桃、腰果、松子、杏仁、葡萄干、酸菜、榨菜
+  1. 蓝莓 (ing_blueberry)
+  2. 枸杞 (ing_goji_berry)
+  3. 核桃 (ing_walnut)
+  4. 腰果 (ing_cashew)
+  5. 松子 (ing_pine_nut)
+  6. 杏仁 (ing_almond)
+  7. 葡萄干 (ing_raisin)
+  8. 酸菜 (ing_pickled_mustard)
+  9. 榨菜 (ing_preserved_mustard)
+
+### 第 11 组（9 种）：梅干菜、酸萝卜、老抽、蒸鱼豉油、东古一品鲜、日式酱油、鲍鱼汁、鱼露、虾酱
+  1. 梅干菜 (ing_dried_mustard_greens)
+  2. 酸萝卜 (ing_pickled_radish)
+  3. 老抽 (ing_dark_soy_sauce)
+  4. 蒸鱼豉油 (ing_steamed_fish_soy_sauce)
+  5. 东古一品鲜 (ing_premium_soy_sauce)
+  6. 日式酱油 (ing_japanese_soy_sauce)
+  7. 鲍鱼汁 (ing_abalone_sauce)
+  8. 鱼露 (ing_fish_sauce)
+  9. 虾酱 (ing_shrimp_paste)
+
+### 第 12 组（9 种）：黄豆酱、甜面酱、柱侯酱、沙茶酱、芝麻酱、花生酱、黑椒酱、照烧汁、XO酱
+  1. 黄豆酱 (ing_soybean_paste)
+  2. 甜面酱 (ing_sweet_bean_sauce)
+  3. 柱侯酱 (ing_chu_hou_paste)
+  4. 沙茶酱 (ing_shacha_sauce)
+  5. 芝麻酱 (ing_sesame_paste)
+  6. 花生酱 (ing_peanut_butter)
+  7. 黑椒酱 (ing_black_pepper_sauce)
+  8. 照烧汁 (ing_teriyaki_sauce)
+  9. XO酱 (ing_xo_sauce)
+
+### 第 13 组（9 种）：海鲜酱、排骨酱、香醋、米醋、白醋、苹果醋、柠檬汁、白砂糖、冰糖
+  1. 海鲜酱 (ing_hoisin_sauce)
+  2. 排骨酱 (ing_rib_sauce)
+  3. 香醋 (ing_balsamic_vinegar)
+  4. 米醋 (ing_rice_vinegar)
+  5. 白醋 (ing_white_vinegar)
+  6. 苹果醋 (ing_apple_cider_vinegar)
+  7. 柠檬汁 (ing_lemon_juice)
+  8. 白砂糖 (ing_white_sugar)
+  9. 冰糖 (ing_rock_sugar)
+
+### 第 14 组（9 种）：红糖、蜂蜜、麦芽糖、糖桂花、番茄酱、番茄膏、甜辣酱、辣椒油、老干妈豆豉酱
+  1. 红糖 (ing_brown_sugar)
+  2. 蜂蜜 (ing_honey)
+  3. 麦芽糖 (ing_maltose)
+  4. 糖桂花 (ing_osmanthus_syrup)
+  5. 番茄酱 (ing_ketchup)
+  6. 番茄膏 (ing_tomato_paste)
+  7. 甜辣酱 (ing_sweet_chili_sauce)
+  8. 辣椒油 (ing_chili_oil)
+  9. 老干妈豆豉酱 (ing_chili_crisp)
+
+### 第 15 组（9 种）：黄灯笼辣椒酱、泰式冬阴功酱、咖喱块、沙拉酱、千岛酱、芥末酱、辣根酱、料酒、花雕酒
+  1. 黄灯笼辣椒酱 (ing_yellow_chili_sauce)
+  2. 泰式冬阴功酱 (ing_tom_yum_paste)
+  3. 咖喱块 (ing_curry_cube)
+  4. 沙拉酱 (ing_mayonnaise)
+  5. 千岛酱 (ing_thousand_island)
+  6. 芥末酱 (ing_mustard)
+  7. 辣根酱 (ing_wasabi)
+  8. 料酒 (ing_cooking_wine)
+  9. 花雕酒 (ing_shaoxing_wine)
+
+### 第 16 组（9 种）：米酒、啤酒、红酒、白葡萄酒、花生油、菜籽油、橄榄油、香油、花椒油
+  1. 米酒 (ing_rice_wine)
+  2. 啤酒 (ing_beer)
+  3. 红酒 (ing_red_wine)
+  4. 白葡萄酒 (ing_white_wine)
+  5. 花生油 (ing_peanut_oil)
+  6. 菜籽油 (ing_rapeseed_oil)
+  7. 橄榄油 (ing_olive_oil)
+  8. 香油 (ing_sesame_oil)
+  9. 花椒油 (ing_sichuan_pepper_oil)
+
+### 第 17 组（9 种）：藤椒油、葱油、猪油、牛油火锅底料、淡奶油、纯牛奶、椰浆、酸奶、芝士片
+  1. 藤椒油 (ing_green_peppercorn_oil)
+  2. 葱油 (ing_scallion_oil)
+  3. 猪油 (ing_lard)
+  4. 牛油火锅底料 (ing_hotpot_base)
+  5. 淡奶油 (ing_heavy_cream)
+  6. 纯牛奶 (ing_milk)
+  7. 椰浆 (ing_coconut_milk)
+  8. 酸奶 (ing_yogurt)
+  9. 芝士片 (ing_cheese_slice)
+
+### 第 18 组（9 种）：马苏里拉芝士、帕玛森芝士、海盐、味精、鸡精、松茸鲜、淀粉、玉米淀粉、红薯淀粉
+  1. 马苏里拉芝士 (ing_mozzarella)
+  2. 帕玛森芝士 (ing_parmesan)
+  3. 海盐 (ing_sea_salt)
+  4. 味精 (ing_msg)
+  5. 鸡精 (ing_chicken_bouillon)
+  6. 松茸鲜 (ing_matsutake_seasoning)
+  7. 淀粉 (ing_starch)
+  8. 玉米淀粉 (ing_cornstarch)
+  9. 红薯淀粉 (ing_sweet_potato_starch)
+
+### 第 19 组（9 种）：吉士粉、泡打粉、小苏打、酵母、白胡椒粉、黑胡椒碎、辣椒面、青花椒、孜然粒
+  1. 吉士粉 (ing_custard_powder)
+  2. 泡打粉 (ing_baking_powder)
+  3. 小苏打 (ing_baking_soda)
+  4. 酵母 (ing_yeast)
+  5. 白胡椒粉 (ing_white_pepper)
+  6. 黑胡椒碎 (ing_black_pepper)
+  7. 辣椒面 (ing_chili_powder)
+  8. 青花椒 (ing_green_peppercorn)
+  9. 孜然粒 (ing_cumin)
+
+### 第 20 组（9 种）：孜然粉、五香粉、十三香、咖喱粉、姜黄粉、肉桂粉、桂皮、香叶、草果
+  1. 孜然粉 (ing_cumin_powder)
+  2. 五香粉 (ing_five_spice)
+  3. 十三香 (ing_thirteen_spice)
+  4. 咖喱粉 (ing_curry_powder)
+  5. 姜黄粉 (ing_turmeric)
+  6. 肉桂粉 (ing_cinnamon_powder)
+  7. 桂皮 (ing_cinnamon_bark)
+  8. 香叶 (ing_bay_leaf)
+  9. 草果 (ing_tsao_ko)
+
+### 第 21 组（9 种）：小茴香、丁香、白芷、山奈、豆蔻、陈皮、黑芝麻、熟花生碎、蒜蓉酥
+  1. 小茴香 (ing_fennel_seed)
+  2. 丁香 (ing_clove)
+  3. 白芷 (ing_angelica_root)
+  4. 山奈 (ing_sand_ginger)
+  5. 豆蔻 (ing_cardamom)
+  6. 陈皮 (ing_dried_tangerine_peel)
+  7. 黑芝麻 (ing_black_sesame)
+  8. 熟花生碎 (ing_crushed_peanut)
+  9. 蒜蓉酥 (ing_fried_garlic)
+
+### 第 22 组（1 种）：面包糠
+  1. 面包糠 (ing_breadcrumbs)

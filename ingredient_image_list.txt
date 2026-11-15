@@ -1,0 +1,343 @@
+# MealColl 食材图片制作清单（主料 / 辅料 / 调料）
+# 说明：按类别分组整理，同一食材仅保留一个标准名称，无重复项。
+# 格式：中文标准名称 | 建议资源名（已有标注 [已有]）
+
+==================================================
+一、主料（Main）
+==================================================
+
+## 1. 肉禽蛋类
+猪五花 | ing_pork_belly
+猪里脊 | ing_pork_tenderloin
+猪梅花肉 | ing_pork_shoulder
+猪排骨 | ing_pork_ribs
+猪蹄 | ing_pork_trotter
+猪肉末 | ing_minced_pork
+腊肉 | ing_cured_pork
+培根 | ing_bacon
+火腿肠 | ing_ham_sausage
+午餐肉 | ing_luncheon_meat
+牛里脊 | ing_beef_tenderloin
+牛腩 | ing_beef_brisket
+肥牛卷 | ing_beef_slices
+牛排 | ing_steak
+牛腱子 | ing_beef_shank
+牛肉末 | ing_minced_beef
+羊肉卷 | ing_lamb_slices
+羊排 | ing_lamb_chops
+羊腿肉 | ing_lamb_leg
+鸡胸肉 | ing_chicken_breast
+鸡腿肉 | ing_chicken_thigh
+鸡翅中 | ing_chicken_wings
+鸡爪 | ing_chicken_feet
+整鸡 | ing_whole_chicken
+鸭肉 | ing_duck
+鸭血 | ing_duck_blood
+鹅肉 | ing_goose
+鸡蛋 | ing_egg
+鸭蛋 | ing_duck_egg
+咸蛋黄 | ing_salted_egg_yolk
+皮蛋 | ing_century_egg
+鹌鹑蛋 | ing_quail_egg
+
+## 2. 水产海鲜类
+三文鱼 | ing_salmon [已有]
+鲈鱼 | ing_sea_bass
+鳕鱼 | ing_cod
+草鱼 | ing_grass_carp
+黑鱼片 | ing_snakehead_fillet
+巴沙鱼 | ing_basa_fillet
+黄鱼 | ing_yellow_croaker
+带鱼 | ing_hairtail
+金枪鱼 | ing_tuna
+鳗鱼 | ing_eel
+大虾 | ing_shrimp
+虾仁 | ing_peeled_shrimp
+小龙虾 | ing_crayfish
+螃蟹 | ing_crab
+鱿鱼 | ing_squid
+八爪鱼 | ing_octopus
+花蛤 | ing_clam
+生蚝 | ing_oyster
+扇贝 | ing_scallop
+鲍鱼 | ing_abalone
+海参 | ing_sea_cucumber
+海带 | ing_kelp
+紫菜 | ing_seaweed
+
+## 3. 豆制品与素食主料
+老豆腐 | ing_firm_tofu
+嫩豆腐 | ing_silken_tofu
+日本豆腐 | ing_egg_tofu
+冻豆腐 | ing_frozen_tofu
+豆腐泡 | ing_tofu_puff
+千张 | ing_tofu_skin
+腐竹 | ing_yuba
+豆干 | ing_dried_tofu
+面筋 | ing_wheat_gluten
+魔芋结 | ing_konjac
+
+## 4. 米面谷物与主食类
+大米 | ing_rice [已有]
+糯米 | ing_glutinous_rice
+小米 | ing_millet
+燕麦 | ing_oats
+面粉 | ing_flour
+面条 | ing_noodles
+手工面片 | ing_dough_drops
+意大利面 | ing_pasta
+乌冬面 | ing_udon
+粉丝 | ing_vermicelli
+米粉 | ing_rice_noodles
+河粉 | ing_ho_fun
+凉皮 | ing_liangpi
+年糕 | ing_rice_cake
+饺子皮 | ing_dumpling_wrapper
+馄饨皮 | ing_wonton_wrapper
+吐司面包 | ing_toast_bread
+馒头 | ing_steamed_bun
+玉米粒 | ing_corn_kernels
+红豆 | ing_red_bean
+绿豆 | ing_mung_bean
+黑豆 | ing_black_bean
+黄豆 | ing_soybean
+
+
+==================================================
+二、辅料（Auxiliary）
+==================================================
+
+## 1. 葱姜蒜及辛香配菜
+大蒜 | ing_garlic [已有]
+生姜 | ing_ginger
+小葱 | ing_scallion
+大葱 | ing_leek
+洋葱 | ing_onion [已有]
+香菜 | ing_cilantro
+小米辣 | ing_bird_eye_chili
+干辣椒 | ing_dried_chili
+泡椒 | ing_pickled_chili
+青椒 | ing_green_pepper
+红椒 | ing_red_pepper
+彩椒 | ing_bell_pepper
+线椒 | ing_long_chili
+迷迭香 | ing_rosemary
+百里香 | ing_thyme
+罗勒叶 | ing_basil
+薄荷叶 | ing_mint
+欧芹 | ing_parsley
+紫苏 | ing_perilla
+
+## 2. 茄果瓜豆类
+西红柿 | ing_tomato
+圣女果 | ing_cherry_tomato
+黄瓜 | ing_cucumber
+茄子 | ing_eggplant
+冬瓜 | ing_winter_melon
+丝瓜 | ing_luffa
+苦瓜 | ing_bitter_melon
+西葫芦 | ing_zucchini
+南瓜 | ing_pumpkin
+秋葵 | ing_okra
+四季豆 | ing_green_beans
+豇豆 | ing_long_beans
+毛豆 | ing_edamame
+豌豆 | ing_green_peas
+荷兰豆 | ing_snow_peas
+豆芽 | ing_bean_sprouts
+玉米棒 | ing_sweet_corn
+
+## 3. 根茎薯芋类
+土豆 | ing_potato
+红薯 | ing_sweet_potato
+紫薯 | ing_purple_potato
+山药 | ing_yam
+芋头 | ing_taro
+胡萝卜 | ing_carrot
+白萝卜 | ing_daikon_radish
+莲藕 | ing_lotus_root
+竹笋 | ing_bamboo_shoot
+芦笋 | ing_asparagus
+荸荠 | ing_water_chestnut
+莴笋 | ing_celtuce
+芋圆 | ing_taro_balls
+
+## 4. 叶菜茎菜类
+大白菜 | ing_napa_cabbage
+小白菜 | ing_bok_choy
+娃娃菜 | ing_baby_cabbage
+生菜 | ing_lettuce
+菠菜 | ing_spinach
+油麦菜 | ing_romaine
+空心菜 | ing_water_spinach
+苋菜 | ing_amaranth
+包菜 | ing_cabbage
+紫甘蓝 | ing_purple_cabbage
+西兰花 | ing_broccoli
+花菜 | ing_cauliflower
+西芹 | ing_celery
+韭菜 | ing_garlic_chives
+蒜薹 | ing_garlic_scape
+芥蓝 | ing_chinese_broccoli
+菜心 | ing_choy_sum
+茼蒿 | ing_garland_chrysanthemum
+西洋菜 | ing_watercress
+
+## 5. 菌菇藻类
+香菇 | ing_shiitake
+金针菇 | ing_enoki
+杏鲍菇 | ing_king_oyster_mushroom
+平菇 | ing_oyster_mushroom
+口蘑 | ing_button_mushroom
+茶树菇 | ing_tea_tree_mushroom
+蟹味菇 | ing_shimeji
+猴头菇 | ing_lions_mane
+黑木耳 | ing_wood_ear
+银耳 | ing_snow_fungus
+竹荪 | ing_bamboo_fungus
+
+## 6. 水果坚果与配料
+柠檬 | ing_lemon
+青柠 | ing_lime
+菠萝 | ing_pineapple
+芒果 | ing_mango
+苹果 | ing_apple
+牛油果 | ing_avocado
+香蕉 | ing_banana
+草莓 | ing_strawberry
+蓝莓 | ing_blueberry
+红枣 | ing_red_date
+枸杞 | ing_goji_berry
+花生米 | ing_peanut
+核桃 | ing_walnut
+腰果 | ing_cashew
+松子 | ing_pine_nut
+杏仁 | ing_almond
+葡萄干 | ing_raisin
+酸菜 | ing_pickled_mustard
+榨菜 | ing_preserved_mustard
+梅干菜 | ing_dried_mustard_greens
+酸萝卜 | ing_pickled_radish
+
+
+==================================================
+三、调料（Seasoning）
+==================================================
+
+## 1. 咸鲜酱汁类
+生抽 | ing_light_soy_sauce
+老抽 | ing_dark_soy_sauce
+蒸鱼豉油 | ing_steamed_fish_soy_sauce
+东古一品鲜 | ing_premium_soy_sauce
+日式酱油 | ing_japanese_soy_sauce
+蚝油 | ing_oyster_sauce
+鲍鱼汁 | ing_abalone_sauce
+鱼露 | ing_fish_sauce
+虾酱 | ing_shrimp_paste
+豆瓣酱 | ing_doubanjiang
+黄豆酱 | ing_soybean_paste
+甜面酱 | ing_sweet_bean_sauce
+柱侯酱 | ing_chu_hou_paste
+沙茶酱 | ing_shacha_sauce
+芝麻酱 | ing_sesame_paste
+花生酱 | ing_peanut_butter
+黑椒酱 | ing_black_pepper_sauce
+照烧汁 | ing_teriyaki_sauce
+XO酱 | ing_xo_sauce
+海鲜酱 | ing_hoisin_sauce
+排骨酱 | ing_rib_sauce
+
+## 2. 酸甜辣酱类
+陈醋 | ing_aged_vinegar
+香醋 | ing_balsamic_vinegar
+米醋 | ing_rice_vinegar
+白醋 | ing_white_vinegar
+苹果醋 | ing_apple_cider_vinegar
+柠檬汁 | ing_lemon_juice
+白砂糖 | ing_white_sugar
+冰糖 | ing_rock_sugar
+红糖 | ing_brown_sugar
+蜂蜜 | ing_honey
+麦芽糖 | ing_maltose
+糖桂花 | ing_osmanthus_syrup
+番茄酱 | ing_ketchup
+番茄膏 | ing_tomato_paste
+甜辣酱 | ing_sweet_chili_sauce
+辣椒油 | ing_chili_oil
+老干妈豆豉酱 | ing_chili_crisp
+剁椒酱 | ing_chopped_chili_sauce
+黄灯笼辣椒酱 | ing_yellow_chili_sauce
+泰式冬阴功酱 | ing_tom_yum_paste
+咖喱块 | ing_curry_cube
+沙拉酱 | ing_mayonnaise
+千岛酱 | ing_thousand_island
+芥末酱 | ing_mustard
+辣根酱 | ing_wasabi
+
+## 3. 酒类与油脂乳制品类
+料酒 | ing_cooking_wine
+花雕酒 | ing_shaoxing_wine
+米酒 | ing_rice_wine
+啤酒 | ing_beer
+红酒 | ing_red_wine
+白葡萄酒 | ing_white_wine
+食用油 | ing_cooking_oil
+花生油 | ing_peanut_oil
+菜籽油 | ing_rapeseed_oil
+橄榄油 | ing_olive_oil
+香油 | ing_sesame_oil
+花椒油 | ing_sichuan_pepper_oil
+藤椒油 | ing_green_peppercorn_oil
+葱油 | ing_scallion_oil
+猪油 | ing_lard
+黄油 | ing_butter [已有]
+牛油火锅底料 | ing_hotpot_base
+淡奶油 | ing_heavy_cream
+纯牛奶 | ing_milk
+椰浆 | ing_coconut_milk
+酸奶 | ing_yogurt
+芝士片 | ing_cheese_slice
+马苏里拉芝士 | ing_mozzarella
+帕玛森芝士 | ing_parmesan
+
+## 4. 粉剂与干香辛料类
+食盐 | ing_salt
+海盐 | ing_sea_salt
+味精 | ing_msg
+鸡精 | ing_chicken_bouillon
+松茸鲜 | ing_matsutake_seasoning
+淀粉 | ing_starch
+玉米淀粉 | ing_cornstarch
+红薯淀粉 | ing_sweet_potato_starch
+吉士粉 | ing_custard_powder
+泡打粉 | ing_baking_powder
+小苏打 | ing_baking_soda
+酵母 | ing_yeast
+白胡椒粉 | ing_white_pepper
+黑胡椒碎 | ing_black_pepper
+辣椒面 | ing_chili_powder
+花椒粒 | ing_sichuan_peppercorn
+青花椒 | ing_green_peppercorn
+孜然粒 | ing_cumin
+孜然粉 | ing_cumin_powder
+五香粉 | ing_five_spice
+十三香 | ing_thirteen_spice
+咖喱粉 | ing_curry_powder
+姜黄粉 | ing_turmeric
+肉桂粉 | ing_cinnamon_powder
+八角 | ing_star_anise
+桂皮 | ing_cinnamon_bark
+香叶 | ing_bay_leaf
+草果 | ing_tsao_ko
+小茴香 | ing_fennel_seed
+丁香 | ing_clove
+白芷 | ing_angelica_root
+山奈 | ing_sand_ginger
+豆蔻 | ing_cardamom
+陈皮 | ing_dried_tangerine_peel
+白芝麻 | ing_white_sesame
+黑芝麻 | ing_black_sesame
+熟花生碎 | ing_crushed_peanut
+蒜蓉酥 | ing_fried_garlic
+面包糠 | ing_breadcrumbs
+

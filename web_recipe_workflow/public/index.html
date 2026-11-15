@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealColl · 菜谱解析后台工作流测试台</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="app-header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-badge">PROTOTYPE</span>
+                <span class="brand-name">MealColl · 菜谱工作流解析实验台</span>
+            </div>
+            <div class="header-status">
+                <span class="status-dot"></span>
+                <span>本地算力就绪 (macOS AVFoundation & Vision)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="workbench-container">
+        <!-- Workflow Stepper Indicator -->
+        <nav class="workflow-stepper">
+            <div class="step-node active" id="stepNode1">
+                <div class="step-num">1</div>
+                <div class="step-label">链接输入与采样</div>
+            </div>
+            <div class="step-line" id="stepLine1"></div>
+            <div class="step-node" id="stepNode2">
+                <div class="step-num">2</div>
+                <div class="step-label">时序图与 Prompt</div>
+            </div>
+            <div class="step-line" id="stepLine2"></div>
+            <div class="step-node" id="stepNode3">
+                <div class="step-num">3</div>
+                <div class="step-label">JSON 回填与菜谱合成</div>
+            </div>
+        </nav>
+
+        <!-- STAGE 1: INPUT & SAMPLING -->
+        <section class="stage-section active" id="stage1">
+            <div class="card stage-card">
+                <div class="card-header">
+                    <h2>输入短视频或图文菜谱链接</h2>
+                    <p class="subtitle">模拟 App 后台：利用手机端/本机硬件算力快速对视频进行采样，输出结构化时序图与大模型 Prompt。</p>
+                </div>
+
+                <div class="input-form">
+                    <div class="input-dashed-box" id="dashedContainer">
+                        <div class="link-icon-circle">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                        </div>
+                        <textarea id="urlInput" placeholder="在此粘贴小红书、抖音、B站、下厨房等菜谱分享链接或文本..."></textarea>
+                    </div>
+
+                    <!-- Quick Testing Shortcuts -->
+                    <div class="quick-samples">
+                        <span class="quick-label">⚡️ 快捷测试选项：</span>
+                        <button class="chip-btn" id="btnLoadSample1">西北番茄牛肉炒面片 (炒面片.mov)</button>
+                        <button class="chip-btn" id="btnUploadLocal">上传本地短视频/图片</button>
+                        <input type="file" id="fileInput" accept="video/*,image/*" style="display:none;">
+                    </div>
+
+                    <button class="btn btn-primary" id="btnStartProcess">
+                        <span class="btn-text">开始执行工作流</span>
+                        <div class="spinner" id="processSpinner" style="display: none;"></div>
+                    </button>
+                    
+                    <div class="status-msg" id="stage1Msg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 2: MIDDLE RESULTS (SHEETS + PROMPT + JSON INPUT) -->
+        <section class="stage-section" id="stage2">
+            <!-- Part A: Visualized Contact Sheets -->
+            <div class="card stage-card">
+                <div class="card-header flex-between">
+                    <div>
+                        <h2>中间结果 1：时序采样拼接图（限定张数网格）</h2>
+                        <p class="subtitle" id="sheetSubtitle">已完成每秒精准抽帧与 OCR 文本识别，每帧标有时序编号与时间戳，可喂给大模型。</p>
+                    </div>
+                    <div class="sheet-tabs" id="sheetTabs">
+                        <!-- Dynamic sheet switch buttons -->
+                    </div>
+                </div>
+
+                <div class="sheet-viewport-container">
+                    <div class="sheet-preview-wrapper" id="sheetPreviewWrapper">
+                        <img id="currentSheetImg" src="" alt="Contact Sheet" />
+                    </div>
+                    <div class="sheet-tip">💡 提示：支持点击查看原图。每小格均已打上清晰时间戳，大模型通过此图提取关键工序与局部特写坐标。</div>
+                </div>
+            </div>
+
+            <!-- Part B: Generated LLM Prompt -->
+            <div class="card stage-card">
+                <div class="card-header flex-between">
+                    <div>
+                        <h2>中间结果 2：专属定制的大模型 Prompt</h2>
+                        <p class="subtitle">已自动将视频时间戳、时长、OCR 字幕及标准输出 JSON Schema 整合进 Prompt 中。</p>
+                    </div>
+                    <button class="btn btn-secondary" id="btnCopyPrompt">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>一键复制 Prompt</span>
+                    </button>
+                </div>
+
+                <div class="prompt-box-wrapper">
+                    <pre id="promptText" class="code-block"></pre>
+                </div>
+            </div>
+
+            <!-- Part C: Model Result Backfill -->
+            <div class="card stage-card highlight-card">
+                <div class="card-header flex-between">
+                    <div>
+                        <h2>步骤 3：粘贴大模型返回的 JSON 结果</h2>
+                        <p class="subtitle">将大模型（ChatGPT / Claude / Gemini）返回的纯 JSON 贴在下方，点击继续将自动裁切关键帧并合成菜谱。</p>
+                    </div>
+                    <button class="btn btn-ghost" id="btnFillDemoJson">✨ 快速填入本片标准示例 JSON</button>
+                </div>
+
+                <div class="json-input-wrapper">
+                    <textarea id="jsonInput" placeholder="在此粘贴大模型输出的 JSON 格式数据..."></textarea>
+                </div>
+
+                <div class="actions-row">
+                    <button class="btn btn-primary" id="btnSynthesize">
+                        <span class="btn-text">继续：合成并展示精美菜谱 (App 相同排版)</span>
+                        <div class="spinner" id="synthSpinner" style="display: none;"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 3: SYNTHESIZED RECIPE (1:1 APP DESIGN) -->
+        <section class="stage-section" id="stage3">
+            <div class="recipe-stage-header">
+                <div class="badge-success">✨ 菜谱合成成功！已精准裁切高保真关键帧</div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary btn-sm" id="btnBackToEdit">返回修改 JSON</button>
+                    <button class="btn btn-secondary btn-sm" id="btnExportSwift">导出为 App Dish 数据结构</button>
+                </div>
+            </div>
+
+            <!-- MealColl Mobile Device Mockup Container -->
+            <div class="phone-stage-wrapper">
+                <div class="phone-frame">
+                    <!-- Clean White Recipe Back-Face (Exact SwiftUI Match) -->
+                    <div class="recipe-app-view" id="recipeAppView">
+                        <!-- Top Plate Section -->
+                        <div class="plate-hero-wrapper">
+                            <!-- Top Right Share Button -->
+                            <div class="top-controls">
+                                <div class="share-circle-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                        <polyline points="16 6 12 2 8 6"></polyline>
+                                        <line x1="12" y1="2" x2="12" y2="15"></line>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- 3D Ceramic Plate with Dish Cover -->
+                            <div class="ceramic-plate">
+                                <div class="plate-inner-groove">
+                                    <img id="dishCoverImg" src="" alt="Ceramic Plate Dish" class="dish-plate-image" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dish Title & Source -->
+                        <div class="recipe-meta-header">
+                            <h1 id="dishTitle" class="dish-title">菜品名称</h1>
+                            <div class="dish-source-row">
+                                <span class="author">by @mealcoll ·</span>
+                                <a href="#" class="origin-link">See Original Link</a>
+                            </div>
+                        </div>
+
+                        <!-- 4-Column Metrics Row -->
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <span class="metric-label">难度</span>
+                                <span class="metric-value" id="valDifficulty">Medium</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">时间</span>
+                                <span class="metric-value" id="valTime">20m</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">食材数量</span>
+                                <span class="metric-value" id="valCount">8</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">热量卡路里</span>
+                                <span class="metric-value" id="valCalories">620</span>
+                            </div>
+                        </div>
+
+                        <!-- Section: Ingredients -->
+                        <section class="recipe-section ingredients-section">
+                            <h2 class="section-heading">Ingredients</h2>
+
+                            <!-- (1) 主料 -->
+                            <div class="ing-subgroup">
+                                <h3 class="subgroup-title">主料</h3>
+                                <div class="main-ing-grid" id="mainIngList">
+                                    <!-- Dynamic Main Ingredients Cards -->
+                                </div>
+                            </div>
+
+                            <!-- (2) 辅料 -->
+                            <div class="ing-subgroup">
+                                <h3 class="subgroup-title">辅料</h3>
+                                <div class="aux-ing-grid" id="auxIngList">
+                                    <!-- Dynamic Auxiliary 4-Grid Cards -->
+                                </div>
+                            </div>
+
+                            <!-- (3) 调料比例横条 -->
+                            <div class="ing-subgroup">
+                                <h3 class="subgroup-title">调料</h3>
+                                <div class="seasoning-list" id="seasoningList">
+                                    <!-- Dynamic Seasoning Proportion Bars -->
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Section: Steps -->
+                        <section class="recipe-section steps-section">
+                            <div class="steps-heading-row">
+                                <h2 class="section-heading">Steps</h2>
+                                <span class="steps-counter" id="stepsCountBadge">(8 步)</span>
+                            </div>
+
+                            <div class="steps-list" id="stepsList">
+                                <!-- Dynamic Steps Cards -->
+                            </div>
+                        </section>
+
+                        <!-- Section: Chef's Notes -->
+                        <section class="recipe-section notes-section" id="chefNotesSection">
+                            <div class="notes-box">
+                                <div class="notes-header">
+                                    <span class="chef-icon">👨‍🍳</span>
+                                    <h3>主厨复盘 · Chef's Notes</h3>
+                                </div>
+                                <ul class="notes-list" id="chefNotesList">
+                                    <!-- Dynamic Chef's Notes -->
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Bottom Log & Collect Actions -->
+                        <div class="bottom-tab-actions">
+                            <button class="btn-checkin" id="btnCheckIn">
+                                <span class="check-icon">✓</span>
+                                <span id="checkInText">今日做了这道菜 · 记入日历</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Gallery Modal for Step Images -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">×</button>
+            <div class="lightbox-image-wrap">
+                <img id="lightboxImg" src="" alt="Enlarged Step Image" />
+            </div>
+            <div class="lightbox-info">
+                <div class="lightbox-step-title" id="lightboxTitle">步骤 01</div>
+                <div class="lightbox-step-desc" id="lightboxDesc">详细说明文案</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-notice" id="toastNotice"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

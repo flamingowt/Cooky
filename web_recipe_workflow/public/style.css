@@ -1,0 +1,1088 @@
+:root {
+    --bg-page: #0f1115;
+    --card-bg: #181b21;
+    --card-border: #282d37;
+    --text-primary: #f0f2f5;
+    --text-secondary: #9aa2b1;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-light: rgba(37, 99, 235, 0.15);
+    
+    /* App Replica Tokens */
+    --app-white: #ffffff;
+    --app-charcoal: #1f1f1f;
+    --app-gray: #808080;
+    --app-tile: #f3f3f1;
+    --app-track: #ececeb;
+    --font-serif: 'Playfair Display', Georgia, 'Songti SC', serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.app-header {
+    background: rgba(24, 27, 33, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--card-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 14px 28px;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-badge {
+    background: #ff5722;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.brand-name {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #4ade80;
+}
+
+/* Workbench Container */
+.workbench-container {
+    max-width: 1160px;
+    margin: 28px auto 60px;
+    padding: 0 20px;
+}
+
+/* Stepper */
+.workflow-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    padding: 12px 24px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-node {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.step-node.active {
+    opacity: 1;
+}
+
+.step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #2a313d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.step-node.active .step-num {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+}
+
+.step-label {
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+.step-line {
+    width: 44px;
+    height: 2px;
+    background: #2d3440;
+    margin: 0 16px;
+}
+
+/* Stages */
+.stage-section {
+    display: none;
+    animation: fadeIn 0.35s ease forwards;
+}
+
+.stage-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+}
+
+.highlight-card {
+    border-color: rgba(37, 99, 235, 0.4);
+    background: linear-gradient(180deg, #181b21 0%, #151a24 100%);
+}
+
+.card-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+}
+
+.card-header .subtitle {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Stage 1: Input Box */
+.input-dashed-box {
+    margin-top: 18px;
+    border: 2px dashed #3a4252;
+    border-radius: 16px;
+    padding: 24px;
+    background: rgba(15, 17, 21, 0.6);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.input-dashed-box:focus-within {
+    border-color: var(--accent);
+}
+
+.link-icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.12);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#urlInput {
+    width: 100%;
+    min-height: 80px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+    outline: none;
+    line-height: 1.5;
+}
+
+.quick-samples {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 20px;
+    flex-wrap: wrap;
+}
+
+.quick-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.chip-btn {
+    background: #232832;
+    color: #cbd5e1;
+    border: 1px solid #333b49;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chip-btn:hover {
+    background: #2d3442;
+    border-color: #475569;
+    color: #fff;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14.5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #272d38;
+    color: #e2e8f0;
+    border: 1px solid #3b4352;
+}
+
+.btn-secondary:hover {
+    background: #323a48;
+    color: #fff;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #60a5fa;
+    border: 1px dashed rgba(96, 165, 250, 0.4);
+    font-size: 13px;
+    padding: 6px 14px;
+}
+
+.btn-ghost:hover {
+    background: rgba(96, 165, 250, 0.08);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.status-msg {
+    margin-top: 14px;
+    font-size: 13.5px;
+    color: #94a3b8;
+}
+
+/* Stage 2: Sheets & Prompt */
+.sheet-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.sheet-tab-btn {
+    background: #242934;
+    border: 1px solid #363e4e;
+    color: #cbd5e1;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    cursor: pointer;
+}
+
+.sheet-tab-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+}
+
+.sheet-viewport-container {
+    margin-top: 16px;
+}
+
+.sheet-preview-wrapper {
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    max-height: 480px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #2a303c;
+    cursor: zoom-in;
+}
+
+.sheet-preview-wrapper img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.sheet-tip {
+    font-size: 12.5px;
+    color: #8b95a5;
+    margin-top: 10px;
+}
+
+.prompt-box-wrapper {
+    margin-top: 14px;
+    background: #0d1015;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #252b36;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.code-block {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #e2e8f0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.json-input-wrapper {
+    margin-top: 14px;
+}
+
+#jsonInput {
+    width: 100%;
+    min-height: 220px;
+    background: #0d1015;
+    border: 1px solid #2e3544;
+    border-radius: 12px;
+    color: #38bdf8;
+    font-family: Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 16px;
+    resize: vertical;
+    outline: none;
+}
+
+#jsonInput:focus {
+    border-color: var(--accent);
+}
+
+.actions-row {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* STAGE 3: RECIPE MOCKUP (EXACT MEALCOLL APP DESIGN) */
+.recipe-stage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.badge-success {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.phone-stage-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 40px;
+}
+
+.phone-frame {
+    width: 412px;
+    background: var(--app-white);
+    border-radius: 36px;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    color: var(--app-charcoal);
+    position: relative;
+}
+
+.recipe-app-view {
+    background: var(--app-white);
+    padding-bottom: 30px;
+}
+
+/* 1. Ceramic Plate Hero */
+.plate-hero-wrapper {
+    position: relative;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+}
+
+.top-controls {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 22px;
+    position: absolute;
+    top: 18px;
+    z-index: 5;
+}
+
+.share-circle-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #2e2e32;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* 3D Ceramic Plate */
+.ceramic-plate {
+    width: 228px;
+    height: 228px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #ffffff 0%, #f6f6f5 65%, #eaeae8 100%);
+    box-shadow: 
+        0 14px 28px rgba(0, 0, 0, 0.12),
+        0 6px 12px rgba(0, 0, 0, 0.06),
+        inset 0 2px 4px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.06);
+    border: 4px solid #f9f9f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.plate-inner-groove {
+    width: 194px;
+    height: 194px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.15);
+    background: #e5e5e5;
+}
+
+.dish-plate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 2. Recipe Meta Header */
+.recipe-meta-header {
+    padding: 8px 22px 0;
+}
+
+.dish-title {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--app-charcoal);
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+
+.dish-source-row {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.dish-source-row .author {
+    color: var(--app-gray);
+    font-weight: 500;
+}
+
+.dish-source-row .origin-link {
+    color: var(--app-charcoal);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* 3. Metrics Grid */
+.metrics-grid {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 22px 20px;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.metric-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9c9c9c;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.metric-value {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--app-charcoal);
+}
+
+/* Recipe Sections */
+.recipe-section {
+    padding: 0 22px;
+    margin-bottom: 24px;
+}
+
+.section-heading {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--app-charcoal);
+    margin-bottom: 14px;
+}
+
+.subgroup-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--app-charcoal);
+    margin-bottom: 10px;
+}
+
+.ing-subgroup {
+    margin-bottom: 18px;
+}
+
+/* (1) Main Ingredients: Two-Card Grid */
+.main-ing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.main-ing-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--app-tile);
+    padding: 10px;
+    border-radius: 14px;
+}
+
+.main-ing-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #e2e2e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.main-ing-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-ing-info {
+    overflow: hidden;
+}
+
+.main-ing-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--app-charcoal);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main-ing-amount {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--app-gray);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.est-tag {
+    font-size: 9px;
+    color: #94a3b8;
+    background: rgba(148, 163, 184, 0.16);
+    padding: 1px 4px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* (2) Auxiliary Ingredients: 4-Grid */
+.aux-ing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.aux-ing-card {
+    background: var(--app-tile);
+    border-radius: 12px;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.aux-ing-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.aux-ing-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--app-charcoal);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.aux-ing-amount {
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--app-gray);
+}
+
+/* (3) Seasoning Proportion Bars */
+.seasoning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.seasoning-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.seasoning-title-col {
+    width: 74px;
+    flex-shrink: 0;
+}
+
+.seasoning-cn {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--app-charcoal);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.seasoning-en {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--app-gray);
+    white-space: nowrap;
+}
+
+.seasoning-bar-track {
+    flex: 1;
+    height: 28px;
+    background: var(--app-track);
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+}
+
+.seasoning-bar-fill {
+    height: 100%;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 48px;
+}
+
+.seasoning-amount-badge {
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* Section: Steps */
+.steps-heading-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.steps-counter {
+    font-size: 13px;
+    color: var(--app-gray);
+    font-weight: 600;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.step-card {
+    background: rgba(243, 243, 241, 0.7);
+    border-radius: 14px;
+    padding: 10px;
+    display: flex;
+    gap: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.step-card-textonly {
+    padding: 12px 14px;
+}
+
+.step-badge-pill {
+    font-size: 10.5px;
+    color: var(--app-gray);
+    background: #e9e9e7;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+.step-thumb-wrap {
+    width: 92px;
+    height: 68px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    background: #000;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.step-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.zoom-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.step-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.step-meta-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.step-num-text {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--app-charcoal);
+}
+
+.step-title-text {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--app-charcoal);
+}
+
+.step-desc-text {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: rgba(31, 31, 31, 0.85);
+    line-height: 1.4;
+}
+
+.step-tip-tag {
+    margin-top: 3px;
+    font-size: 11px;
+    color: #b45309;
+    background: rgba(245, 158, 11, 0.12);
+    padding: 3px 6px;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+/* Chef's Notes Section */
+.notes-box {
+    background: #fdfbf7;
+    border: 1px solid #f2e8d9;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.notes-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.notes-header h3 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #78350f;
+}
+
+.notes-list {
+    padding-left: 18px;
+    font-size: 12px;
+    color: #451a03;
+    line-height: 1.6;
+}
+
+.notes-list li {
+    margin-bottom: 4px;
+}
+
+/* Bottom Tab Actions */
+.bottom-tab-actions {
+    padding: 12px 22px 0;
+}
+
+.btn-checkin {
+    width: 100%;
+    padding: 14px;
+    background: var(--app-charcoal);
+    color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-checkin.checked {
+    background: #22c55e;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 620px;
+    width: 90%;
+    background: #181b21;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #2e3544;
+    z-index: 101;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image-wrap {
+    width: 100%;
+    max-height: 480px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image-wrap img {
+    max-width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+}
+
+.lightbox-info {
+    padding: 16px 20px;
+}
+
+.lightbox-step-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.lightbox-step-desc {
+    font-size: 13.5px;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+/* Toast Notice */
+.toast-notice {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(30px);
+    background: rgba(30, 41, 59, 0.95);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 13.5px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 200;
+}
+
+.toast-notice.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
